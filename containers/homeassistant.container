@@ -4,7 +4,7 @@ Description=Home Assistant container for homelab
 [Container]
 AutoUpdate=registry
 ContainerName=homeassistant
-Image=docker.io/home-assistant/home-assistant:stable
+Image=ghcr.io/home-assistant/home-assistant
 PublishPort=8123:8123
 Volume=homeassistant.volume:/config
 Volume=/etc/localtime:/etc/localtime:ro
