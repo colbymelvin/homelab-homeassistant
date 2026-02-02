@@ -10,9 +10,11 @@ Volume=homeassistant.volume:/config
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=/run/dbus:/run/dbus:ro
 Environment=TZ=America/New_York
+Environment=DISABLE_JEMALLOC=true
 
 [Service]
 Restart=unless-stopped
+TimeoutStartSec=10min
 
 [Install]
 # Start automtically by default on boot
