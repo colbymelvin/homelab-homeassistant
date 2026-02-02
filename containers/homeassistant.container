@@ -1,0 +1,19 @@
+[Unit]
+Description=Home Assistant container for homelab
+
+[Container]
+AutoUpdate=registry
+ContainerName=homeassistant
+Image=docker.io/home-assistant/home-assistant:stable
+PublishPort=8123:8123
+Volume=homeassistant.volume:/config
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/run/dbus:/run/dbus:ro
+Environment=TZ=America/New_York
+
+[Service]
+Restart=unless-stopped
+
+[Install]
+# Start automtically by default on boot
+WantedBy=default.target
